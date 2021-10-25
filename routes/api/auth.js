@@ -1,6 +1,6 @@
 const express = require('express')
 
-const { joiSchema, joiSubscrSchema } = require('../../models/user')
+const { joiSchema } = require('../../models/user')
 const { controllerWrapper, validation, authenticate } = require('../../middlewares')
 const upload = require('../../middlewares/upload')
 const { auth: ctrl } = require('../../controllers')
