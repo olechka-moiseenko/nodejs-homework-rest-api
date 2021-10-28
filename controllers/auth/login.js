@@ -9,9 +9,13 @@ const { sendSuccessRes } = require('../../helpers')
 
 const login = async(req, res) => {
   const { email, password } = req.body
-  const user = await User.findOne({ email }, '_id email password')
+  const user = await User.findOne({ email }, '_id email password verify')
   if (!user || !user.comparePassword(password)) {
     throw new BadRequest('Invalid email or password')
+  }
+
+  if (!user.verify) {
+    throw new BadRequest('User is not verified')
   }
 
   const { _id } = user
