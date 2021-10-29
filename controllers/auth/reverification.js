@@ -15,7 +15,7 @@ const reverification = async (req, res) => {
     throw new NotFound('User not found')
   }
 
-  if (user.verivy) {
+  if (user.verify) {
     throw new Forbidden('User already verified')
   }
 

@@ -11,7 +11,7 @@ router.post('/users/signup', validation(joiSchema), controllerWrapper(ctrl.signu
 
 router.post('/verify', controllerWrapper(ctrl.reverification))
 
-router.post('users/verify/:verifyToken', controllerWrapper(ctrl.verify))
+router.get('/users/verify/:verifyToken', controllerWrapper(ctrl.verify))
 
 router.post('/users/login', validation(joiSchema), controllerWrapper(ctrl.login))
 
